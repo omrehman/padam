@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>MALAYALAM DEFINITIONS </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <!-- GOOGLE TRANSLITRATOR JAVASCRIPT CODE -->
+        <script type="text/javascript" src="https://www.google.com/jsapi">
+    </script>
+    
+    <script type="text/javascript" src="js/http_req_file.js"></script>
+    <script type="text/javascript">
+
+      // Load the Google Transliterate API
+      google.load("elements", "1", {
+            packages: "transliteration"
+          });
+
+      function onLoad() {
+        var options = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [google.elements.transliteration.LanguageCode.MALAYALAM],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        // Create an instance on TransliterationControl with the required
+        // options.
+        var control =
+            new google.elements.transliteration.TransliterationControl(options);
+
+        // Enable transliteration in the textbox with id
+        // 'transliterateTextarea'.
+        control.makeTransliteratable(['input_word']);
+      }
+      google.setOnLoadCallback(onLoad);
+    </script>
+    
+    <!-- GOOGLE TRANSLITRATOR JAVASCRIPT CODE -->
+    </head>
+    <body>
+    <form id='get_word_form' name='get_word_form' method='post' action='get-definition'>
+ 	  ENTER NAME: <input type='text' id='input_word' name='input_word' > <br/>
+ 	  <input type='submit' id='get_word_form' name='get_word_form' value='Get Definition'>
+ 	</form>
+ 	  {% if definition %}
+ 	   {% for def in definition %}
+ 	   		<p> def = {{def[0]}}<br/></p>
+ 	   	{% endfor %}
+ 	   {% endif %}		
+ 	   		
+ 	 
+ 	  
+    </body>
+</html>

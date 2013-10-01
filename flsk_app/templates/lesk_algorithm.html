@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>മലയാളം ലെസ്ക് </title>
+	<meta name="keywords" content="ancient, free css templates, CSS, HTML" />
+	<link href="static/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+ 	<!-- GOOGLE TRANSLITRATOR JAVASCRIPT CODE -->
+ 	
+        <script type="text/javascript" src="https://www.google.com/jsapi">
+    </script>
+    
+    <script type="text/javascript" src="js/http_req_file.js"></script>
+    <script type="text/javascript">
+
+      // Load the Google Transliterate API
+      google.load("elements", "1", {
+            packages: "transliteration"
+          });
+
+      function onLoad() {
+        var options = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [google.elements.transliteration.LanguageCode.MALAYALAM],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        // Create an instance on TransliterationControl with the required
+        // options.
+        var control =
+            new google.elements.transliteration.TransliterationControl(options);
+
+        // Enable transliteration in the textbox with id
+        // 'transliterateTextarea'.
+        control.makeTransliteratable(['context','word']);
+      }
+      google.setOnLoadCallback(onLoad);
+    </script>
+    
+    <!-- GOOGLE TRANSLITRATOR JAVASCRIPT CODE -->
+	</head>
+	<body>
+	{% if empty_flag %}
+	<script>
+	  alert('{{alert_msg}}');
+	  history.go(-1);
+	</script>
+	
+	{% else %}
+	<div id="templatemo_wrapper">
+
+	<span class="bg_top"></span>
+    <span class="bg_bottom"></span>
+
+	<div id="templatemo_menu">
+        <ul>
+          <li><a href="http://wordnet.simplegroups.in/" target="_blank" >പ്രധാന താള്‍ </a></li>
+          <li><a href="http://wordnet.simplegroups.in/search_word.php" target="_blank">തിരയൽ <!--ഞങ്ങളെ കുറിച്ച് --></a></li>
+          <li><a href="lesk-algorithm"class="current" >PADAM("പാദം")</a></li>
+          <li><a href="#" >ബ്ലോഗ്‌ </a></li>
+          <li class="last"><a href="#">ഞങ്ങളെ സമീപിക്കുക </a></li>
+        </ul>
+	</div> <!-- end of menu -->
+    
+    <div id="templatemo_header">
+		<div id="site_title">
+                    <center> 
+                        <h2> <br/><br/> PADAM("പാദം")</h2>
+                        <h3>Practical Aid for Disambiguation Application in Malayalam </h3>
+                    </center>
+                
+                </div>
+            
+	</div> 
+	
+	<div id="templatemo_main">
+			
+			<form id='get_input_for_lesk' name='get_input_for_lesk'	method='post' action='lesk-algorithm'>
+					<center>
+					<table>
+						 	<tr>
+						 		<td>സന്ദർഭം:</td><td> <input type='text' id='context' name='context' tooltip='Put a space after every word' >
+						 	</tr>
+						 	<tr>
+						 		<td>നാനാർത്ഥ  പദം:</td><td> <input type='text' id='word' name='word' tooltip='Put a space after every word' >
+						 	</tr>
+								<tr>
+									<td></td><td><input type='submit' id='for_lesk_submit' name='for_lesk_submit' value='Resolve'> </td>
+								 </tr>						
+						</table>
+						</center>
+			</form>
+		<br><br>
+		  
+		{% if definition %}
+		                      <center> 
+                        <h2> <br/><br/> തിരഞ്ഞെടുത്ത  അർത്ഥങ്ങൾ </h2>
+                   
+		 <textarea  readonly='true' rows="20" cols="70" >
+		   {%for item in definition:%}
+		   	  {{item+"\n======================================================================="}}
+		   {% endfor %}
+		 </textarea>
+		  </center>
+		{% endif %}
+	</div> <!-- end of main -->
+    <div id="templatemo_main_bottom"></div>
+	<div id="templatemo_footer">
+        Copyright © 2048 <a href="http://www.simplegroups.in" target="_bank">Simple Groups</a> | Designed by <a href="http://universityofcalicut.academia.edu/omrehman" target="_blank">Mujeeb Rehman O(omrehman@gmail.com)</a>
+        
+        <div class="cleaner"></div>
+    </div>
+
+</div> <!-- end of wrapper -->
+	{% endif %}
+	</body>
+</html>
