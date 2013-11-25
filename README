@@ -2,3 +2,14 @@ PADAM (പദം)
 =======================
 
 PADAM("പദം") is a small project to disambiguate the ambigous words in Malayalam. This project is made upon  the Lesk algorithm for word sense disambigutaion. It used the python-flask technology for friend end programming and mysql database as backend.
+
+Requirments:
+============================
+
+python 2.7+ compiler
+
+python-flask module
+
+Mysql database
+
+Malayalam Language Support
