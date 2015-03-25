@@ -11,6 +11,8 @@ python 2.7+ compiler
 
 python-flask module
 
+python-MySQLdb module 
+
 Mysql database
 
 Malayalam Language Support
