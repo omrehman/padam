@@ -14,3 +14,18 @@ python-flask module
 Mysql database
 
 Malayalam Language Support
+
+
+
+How to install ??
+
+=========================================
+
+
+step 1 : frist import the malwsd.sql file  to my sql database  named malwsd
+
+step 2 : then change the db credentials in     flsk_app->malayalam_lesk->classes->mysql_config.py  to your db user name password and name.( NB: host is usually localhost).
+
+step 3: run the file run.py
+
+step  4:  then type this url in any browser : http://localhost:2030/lesk-algorithm   ( NB:the port is usually 2030 it will change when you changes the port in run.py)
